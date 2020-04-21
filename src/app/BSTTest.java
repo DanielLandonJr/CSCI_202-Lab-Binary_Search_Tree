@@ -2,8 +2,7 @@ package app;
 
 import java.util.ArrayList;
 
-// package bsttest; // dcljr
-
+// package bsttest; // dclj
 import java.util.Scanner;
 
 public class BSTTest {
