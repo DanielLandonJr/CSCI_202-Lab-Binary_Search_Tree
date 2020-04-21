@@ -1,34 +1,34 @@
-package app;
+package app; // dcljr
 
-// import java.io.*;
+// import java.io.*; // dcljr
 import java.util.*;
 
 public class BinarySearchTree<E extends Comparable<E>> extends AbstractTree<E> {
+
   protected TreeNode<E> root;
   protected int size = 0;
+
   /** Create a default binary tree */
-  public BinarySearchTree() {
-  }
+  public BinarySearchTree() { }
+
   /** Create a binary tree from an array of objects */
   public BinarySearchTree(E[] objects) {
     for (int i = 0; i < objects.length; i++)
       insert(objects[i]);
   }
+
   /** Returns true if the element is in the tree */
   public boolean search(E e) {
     TreeNode<E> current = root; // Start from the root
     while (current != null) {
-      if (e.compareTo(current.element) < 0) {
-        current = current.left;
-      }
-      else if (e.compareTo(current.element) > 0) {
-        current = current.right;
-      }
+      if (e.compareTo(current.element) < 0) { current = current.left; }
+      else if (e.compareTo(current.element) > 0) { current = current.right; }
       else // element matches current.element
         return true; // Element is found
     }
     return false;
   }
+
   /** Insert element o into the binary tree
    * Return true if the element is inserted successfully. 
    *  Uses an iterative algorithm
@@ -50,7 +50,8 @@ public class BinarySearchTree<E extends Comparable<E>> extends AbstractTree<E> {
           current = current.right;
         }
         else
-          return false; // Duplicate node not inserted       
+          return false; // Duplicate node not inserted
+          
       // Create the new node and attach it to the parent node
       if (e.compareTo(parent.element) < 0)
         parent.left = createNewNode(e);
@@ -60,13 +61,12 @@ public class BinarySearchTree<E extends Comparable<E>> extends AbstractTree<E> {
     size++;
     return true; // Element inserted
   }
-  protected TreeNode<E> createNewNode(E e) {
-    return new TreeNode<E>(e);
-  }
+
+  protected TreeNode<E> createNewNode(E e) { return new TreeNode<E>(e); }
+
   /** Inorder traversal from the root*/
-  public void inorder() {
-    inorder(root);
-  }
+  public void inorder() { inorder(root); }
+
   /** Inorder traversal from a subtree */
   protected void inorder(TreeNode<E> root) {
     if (root == null) return;
@@ -74,10 +74,11 @@ public class BinarySearchTree<E extends Comparable<E>> extends AbstractTree<E> {
     System.out.print(root.element + " ");
     inorder(root.right);
   }
+
+   
   /** Postorder traversal from the root */
-  public void postorder() {
-    postorder(root);
-  }
+  public void postorder() { postorder(root); }
+
   /** Postorder traversal from a subtree */
   protected void postorder(TreeNode<E> root) {
     if (root == null) return;
@@ -85,10 +86,10 @@ public class BinarySearchTree<E extends Comparable<E>> extends AbstractTree<E> {
     postorder(root.right);
     System.out.print(root.element + " ");
   }
+
   /** Preorder traversal from the root */
-  public void preorder() {
-    preorder(root);
-  }
+  public void preorder() { preorder(root); }
+
   /** Preorder traversal from a subtree */
   protected void preorder(TreeNode<E> root) {
     if (root == null) return;
@@ -96,92 +97,58 @@ public class BinarySearchTree<E extends Comparable<E>> extends AbstractTree<E> {
     preorder(root.left);
     preorder(root.right);
   }
+
   /** Inner class tree node */
   public static class TreeNode<E extends Comparable<E>> {
     E element;
     TreeNode<E> left;
     TreeNode<E> right;
 
-    public TreeNode(E e) {
-      element = e;
-    }
+    public TreeNode(E e) { element = e; }
   }
+
   /** Get the number of nodes in the tree */
-  public int getSize() {
-    return size;
-  }
+  public int getSize() { return size; }
+
   /** Returns the root of the tree */
-  public TreeNode<E> getRoot() {
-      return root;
-  }
-    //Returns an ArrayList containing elements in the path from the root leading to the specified element, returns an empty ArrayList if no  such element exists. */
-    /*
-    Algorithm for path method
-    1. Check if given element is in BST
-    2. Traverse throught the Tree to the given element
-    3. Add values of nodes during traversal into an ArrayList until arriving at target node/leaf
-    4. Return the ArrayList
-    */
+//   public TreeNode getRoot() { return root; } // dcljr
+  public TreeNode<E> getRoot() { return root; }
+   
+    /** Returns an ArrayList containing elements in the path from the root leading to the specified element, returns an empty ArrayList if no  such element exists. */
     public ArrayList<E> path(E e){
         java.util.ArrayList<E> list = new java.util.ArrayList<>();
         TreeNode<E> current = root; // Start from the root
         //implement the code here as in search method.
-        if(search(e) == false){
-          return list;
-        }else{
-          list.add(current.element);
-          if((boolean) current.element) {
-            current = root.left;
-          }
-        }
-        
         return list; // Return an array of elements
-    }  
-    //Returns the number of leaf nodes in this tree, returns 0 if tree is empty
-    public int getNumberOfLeaves(){
-    //left for you to implem{ent in Lab 7
-      if(root == null){
-        return 0;
-      }else if(root.left == null && root.right == null){
-        return 1; 
-      }else{
-        
-      }
+  }
+  
+    
+    /* Returns the number of leaf nodes in this tree, returns 0 if tree is empty*/
+    public int  getNumberOfLeaves(){
+        //left for you to implement in Lab 7
 
-      return 0;
-    }
-      /*
-    int numberOfLeaves = 0;
-    if(root.element == null){
-      return numberOfLeaves;
-      }else if(root.left == null && root.right == null){
-        numberOfLeaves += 1;
-        return numberOfLeaves;
-      }else{ 
-       return numberOfLeaves;
-      }
-    }
-    */
-   //Returns an ArrayList containing all elements in preorder of the specified element’s left sub-tree, returns an empty ArrayList if no  such element exists. 
-   /*
-    public ArrayList<E> leftSubTree(E e){
-    //left for you to implement in Lab 7
-    }
-    */
-    //Returns an ArrayList containing all elements in preorder of the specified element’s right sub-tree, returns an empty ArrayList if no  such element exists.
-   
-    public ArrayList<E> rightSubTree(E e){
-    //left for you to implement in Lab 7
-
-        return null;
+        return 0; // dcljr
     }
     
-    //Returns the inorder predecessor of the specified element, returns null if tree is empty or element 'e' is not in the tree.
-    public E inorderPredecessor(E e){
+    /* Returns an ArrayList containing all elements in preorder of the specified element’s left sub-tree, returns an empty ArrayList if no  such element exists. */
+    public ArrayList<E> leftSubTree(E e){
+        return null; // dcljr
     //left for you to implement in Lab 7
-        return null;
     }
-
+    
+    /* Returns an ArrayList containing all elements in preorder of the specified element’s right sub-tree, returns an empty ArrayList if no  such element exists. */
+    public ArrayList<E> rightSubTree(E e){
+        return null; // dcljr
+    //left for you to implement in Lab 7
+    }
+    
+    /* Returns the inorder predecessor of the specified element, returns null if tree is empty or element 'e' is not in the tree. */
+    public E inorderPredecessor(E e){
+        return e; // dcljr
+    //left for you to implement in Lab 7
+    }
+    
+    
   /** Delete an element from the binary tree.
    * Return true if the element is deleted successfully
    * Return false if the element is not in the tree */
@@ -242,29 +209,25 @@ public class BinarySearchTree<E extends Comparable<E>> extends AbstractTree<E> {
   }
   
   /** Obtain an iterator. Use inorder. */
-  public java.util.Iterator<Integer> iterator() {
-    return inorderIterator();
-  }
+//   public java.util.Iterator iterator() { return inorderIterator(); } // dcljr
+  public java.util.Iterator<E> iterator() { return inorderIterator(); }
 
   /** Obtain an inorder iterator */
-  public java.util.Iterator<Integer> inorderIterator() {
-    return new InorderIterator();
-  }
+//   public java.util.Iterator inorderIterator() { return new InorderIterator(); } // dcl jr
+  public java.util.Iterator<E> inorderIterator() { return new InorderIterator(); }
 
   // Inner class InorderIterator
-  class InorderIterator implements java.util.Iterator<Integer> {
+//   class InorderIterator implements java.util.Iterator { // dcljr
+  class InorderIterator implements java.util.Iterator<E> {
     // Store the elements in a list
     private java.util.ArrayList<E> list = new java.util.ArrayList<E>();
     private int current = 0; // Point to the current element in list
 
-    public InorderIterator() {
-      inorder(); // Traverse binary tree and store elements in list
-    }
+     // Traverse binary tree and store elements in list
+    public InorderIterator() { inorder(); }
 
     /** Inorder traversal from the root*/
-    private void inorder() {
-      inorder(root);
-    }
+    private void inorder() { inorder(root); }
 
     /** Inorder traversal from a subtree */
     private void inorder(TreeNode<E> root) {
@@ -282,12 +245,8 @@ public class BinarySearchTree<E extends Comparable<E>> extends AbstractTree<E> {
     }
 
     /** Get the current element and move cursor to the next */
-    // public Object next() {
-    //   return list.get(current++);
-    // }
-    public Integer next() {
-      return (Integer) list.get(current++);
-    }
+    // public Object next() { return list.get(current++); } // dcljr
+    public E next() { return list.get(current++); }
 
     /** Remove the current element and refresh the list */
     public void remove() {
@@ -302,10 +261,9 @@ public class BinarySearchTree<E extends Comparable<E>> extends AbstractTree<E> {
     root = null;
     size = 0;
   }
-public String leftSubTree(Integer key) {
-	return null;
-}
-public String inOrder2(Integer key) {
-	return null;
-}
+
+    // dcljr
+    public String inOrder2(Integer key) { return null; }
+
+	public void output() { } // dcljr
 }

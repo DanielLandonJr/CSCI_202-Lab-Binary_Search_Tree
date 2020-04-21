@@ -1,8 +1,12 @@
 package app;
 
+// package bsttest; // dcljr
+
 public interface Tree<E extends Comparable<E>> {
+
   /** Return true if the element is in the tree */
   public boolean search(E e);
+
   /** Insert element o into the binary tree
    * Return true if the element is inserted successfully */
   public boolean insert(E e);
@@ -27,7 +31,8 @@ public interface Tree<E extends Comparable<E>> {
   public boolean isEmpty();
 
   /** Return an iterator to traverse elements in the tree */
-  public java.util.Iterator<Integer> iterator();
+//   public java.util.Iterator iterator(); // dcljr
+  public java.util.Iterator<E> iterator();
 
 }
 
