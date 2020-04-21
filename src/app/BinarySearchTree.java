@@ -8,6 +8,102 @@ public class BinarySearchTree<E extends Comparable<E>> extends AbstractTree<E> {
   protected TreeNode<E> root;
   protected int size = 0;
 
+  // >>>>>>>>>>>>>>>>>>> PROJECT CODE <<<<<<<<<<<<<<<<<<<
+  
+    /**
+     * 
+     * <p><strong><em>Description: </em></strong>none</p>
+     * 
+     * <p><strong><em>Method Name: </em></strong>path</p>
+     *  
+     * <p><strong><em>Method Notes: </em></strong>Returns an ArrayList containing elements in the path from the root leading to the specified element, returns an empty ArrayList if no  such element exists.</p>
+     * 
+     * <p><strong><em>Pre-Conditions: </em></strong>none</p>
+     * 
+     * <p><strong><em>Post-Conditions: </em></strong>none</p>
+     * 
+     * <p><strong><em>Author: </em></strong>Daniel C. Landon Jr.</p>
+     * <p><strong><em>Start Date: </em></strong>04.21.2020</p>
+     *
+     * @param e element to look for
+     * @return ArrayList with found data, empty ArrayList if nothing found
+     */
+    public ArrayList<E> path(E e){
+        
+        // variables
+        java.util.ArrayList<E> list = new java.util.ArrayList<>();
+        TreeNode<E> current = root; // Start from the root
+
+        //implement the code here as in search method.
+
+        return list; // Return an array of elements
+
+    } // end path
+
+    /**
+     * 
+     * <p><strong><em>Description: </em></strong>none</p>
+     * 
+     * <p><strong><em>Method Name: </em></strong>getNumberOfLeaves</p>
+     *  
+     * <p><strong><em>Method Notes: </em></strong>Returns the number of leaf nodes in this tree, returns 0 if tree is empty</p>
+     * 
+     * <p><strong><em>Pre-Conditions: </em></strong>none</p>
+     * 
+     * <p><strong><em>Post-Conditions: </em></strong>none</p>
+     * 
+     * <p><strong><em>Author: </em></strong>Daniel C. Landon Jr.</p>
+     * <p><strong><em>Start Date: </em></strong>04.21.2020</p>
+     *
+     * @return number of leaf nodes or 0 if empty
+     */
+    public int getNumberOfLeaves(){ 
+        
+        // if we get here nothing was found
+        return 0; 
+
+    } // end getNumberOfLeaves
+
+    /**
+     * 
+     * <p><strong><em>Description: </em></strong>EXTRA CREDIT</p>
+     * 
+     * <p><strong><em>Method Name: </em></strong>inorderPredecessor</p>
+     *  
+     * <p><strong><em>Method Notes: </em></strong>Returns the inorder predecessor of the specified element, returns null if tree is empty or element 'e' is not in the tree.</p>
+     * 
+     * <p><strong><em>Pre-Conditions: </em></strong>none</p>
+     * 
+     * <p><strong><em>Post-Conditions: </em></strong>none</p>
+     * 
+     * <p><strong><em>Author: </em></strong>Daniel C. Landon Jr.</p>
+     * <p><strong><em>Start Date: </em></strong>04.21.2020</p>
+     *
+     * @param e element to look for
+     * @return null if tree is empty or "e" is not in the tree, inorder predecessor otherwise
+     */
+    public E inorderPredecessor(E e){ 
+    
+        // if we get here assumpiton is nothing was found or invalid search
+        return null; 
+    
+    } // end inorderPredecessor
+
+
+  // >>>>>>>>>>>>>>>>>>> PROJECT CODE <<<<<<<<<<<<<<<<<<<
+
+
+
+
+
+
+
+
+
+
+
+
+
   /** Create a default binary tree */
   public BinarySearchTree() { }
 
@@ -114,21 +210,29 @@ public class BinarySearchTree<E extends Comparable<E>> extends AbstractTree<E> {
 //   public TreeNode getRoot() { return root; } // dcljr
   public TreeNode<E> getRoot() { return root; }
    
-    /** Returns an ArrayList containing elements in the path from the root leading to the specified element, returns an empty ArrayList if no  such element exists. */
-    public ArrayList<E> path(E e){
-        java.util.ArrayList<E> list = new java.util.ArrayList<>();
-        TreeNode<E> current = root; // Start from the root
-        //implement the code here as in search method.
-        return list; // Return an array of elements
-  }
-  
-    
-    /* Returns the number of leaf nodes in this tree, returns 0 if tree is empty*/
-    public int  getNumberOfLeaves(){
-        //left for you to implement in Lab 7
 
-        return 0; // dcljr
-    }
+
+  // dcljr
+  // commented out so code can be added at the top of the file. this is stubbed here but we are requred to modify
+  // dcljr
+    /** Returns an ArrayList containing elements in the path from the root leading to the specified element, returns an empty ArrayList if no  such element exists. */
+//     public ArrayList<E> path(E e){
+//         java.util.ArrayList<E> list = new java.util.ArrayList<>();
+//         TreeNode<E> current = root; // Start from the root
+//         //implement the code here as in search method.
+//         return list; // Return an array of elements
+//   }
+  
+
+// dcljr
+// commented out, project requirement added to top of file.
+
+    // /* Returns the number of leaf nodes in this tree, returns 0 if tree is empty*/
+    // public int  getNumberOfLeaves(){
+    //     //left for you to implement in Lab 7
+
+    //     return 0; // dcljr
+    // }
     
     /* Returns an ArrayList containing all elements in preorder of the specified element’s left sub-tree, returns an empty ArrayList if no  such element exists. */
     public ArrayList<E> leftSubTree(E e){
@@ -142,11 +246,14 @@ public class BinarySearchTree<E extends Comparable<E>> extends AbstractTree<E> {
     //left for you to implement in Lab 7
     }
     
+    //dcljr
+    // commented out. added to top of file for project requirement
+
     /* Returns the inorder predecessor of the specified element, returns null if tree is empty or element 'e' is not in the tree. */
-    public E inorderPredecessor(E e){
-        return e; // dcljr
-    //left for you to implement in Lab 7
-    }
+    // public E inorderPredecessor(E e){
+    //     return e; // dcljr
+    // //left for you to implement in Lab 7
+    // }
     
     
   /** Delete an element from the binary tree.
