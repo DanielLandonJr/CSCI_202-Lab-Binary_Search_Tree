@@ -36,6 +36,35 @@ public class BinarySearchTree<E extends Comparable<E>> extends AbstractTree<E> {
 
         //implement the code here as in search method.
 
+        // loop the list
+        while (current != e) {
+
+            // if we hit null e is not in the tree so reset list and get out
+            if(current == null) {
+
+                list.clear(); //clear the list
+
+                break; // get out
+
+            } // end if
+            else {
+
+                // echo to see the nodes that are searched
+                // System.out.println(current.element.toString());
+
+                // build our array of searched nodes
+                list.add(current.element);
+    
+                if (e.compareTo(current.element) < 0) { current = current.left; } // go left
+                else if (e.compareTo(current.element) > 0) { current = current.right; } // go right
+                else { break; } // found it so get out
+
+            } // end else
+        }
+
+        // echo to test list size...any value other than 0 and we found e
+        // System.out.println("List size: " + list.size());
+
         return list; // Return an array of elements
 
     } // end path
