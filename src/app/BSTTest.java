@@ -68,8 +68,6 @@ public class BSTTest {
 
         // >>>>>>>>>> getNumberOfLeaves <<<<<<<<<<
 
-        // >>>>>>>>>> getNumberOfLeaves <<<<<<<<<<
-
         lineSeperator(80, '*');
 
         System.out.println("\n>>>>>>>>>> getNumberOfLeaves: START <<<<<<<<<<\n");
@@ -77,6 +75,8 @@ public class BSTTest {
         System.out.println("Number of Leaves found: " + tree.getNumberOfLeaves());
 
         System.out.println("\n>>>>>>>>>> getNumberOfLeaves: END <<<<<<<<<<");
+
+        // >>>>>>>>>> getNumberOfLeaves <<<<<<<<<<
 
 
 
@@ -87,44 +87,44 @@ public class BSTTest {
          
           //search
        
-        // System.out.print("Enter element to search:\t");
-        // key = input.nextInt();
-        // System.out.println("tree.search(key) =\t\t" + tree.search(key));
+        System.out.print("Enter element to search:\t");
+        key = input.nextInt();
+        System.out.println("tree.search(key) =\t\t" + tree.search(key));
 
       
-        // System.out.print("Enter a number for rightsubtree:");
-        // key = input.nextInt();
-        // System.out.println("tree.rightSubTree(key=\t"+tree.rightSubTree(key));
-        // System.out.println();
+        System.out.print("Enter a number for rightsubtree:");
+        key = input.nextInt();
+        System.out.println("tree.rightSubTree(key=\t"+tree.rightSubTree(key));
+        System.out.println();
 
         
         
-        // System.out.println("");
-        // System.out.print("Enter number for leftsubtree:\t");
-        // key = input.nextInt();
-        // System.out.println("tree.leftSubTree(key)=\t"+ tree.leftSubTree(key));
-        // System.out.println();
+        System.out.println("");
+        System.out.print("Enter number for leftsubtree:\t");
+        key = input.nextInt();
+        System.out.println("tree.leftSubTree(key)=\t"+ tree.leftSubTree(key));
+        System.out.println();
         
         //delete
-        // System.out.print("\nEnter element to delete:\t");
-        // key = input.nextInt();
-        // tree.delete(key);
-        // System.out.println("The deletion of number\t\t" + key + " is:       Go ahead and look, but it's not there  :)  ");
-        // tree.output();
+        System.out.print("\nEnter element to delete:\t");
+        key = input.nextInt();
+        tree.delete(key);
+        System.out.println("The deletion of number\t\t" + key + " is:       Go ahead and look, but it's not there  :)  ");
+        tree.output();
 
         //complete the code as suggested in Lab document.
         //insert
-        // System.out.print("\nEnter an element to insert\t");
-        // key = input.nextInt();
-        // tree.insert(key);
-        // System.out.println("");
-        // System.out.println("The insertion of number " + key + " is:");
-        // tree.output();
+        System.out.print("\nEnter an element to insert\t");
+        key = input.nextInt();
+        tree.insert(key);
+        System.out.println("");
+        System.out.println("The insertion of number " + key + " is:");
+        tree.output();
  
          
-        // System.out.print("Enter number for path:\t\t");
-        // key = input.nextInt();
-        // System.out.println(tree.path(key));
+        System.out.print("Enter number for path:\t\t");
+        key = input.nextInt();
+        System.out.println(tree.path(key));
 
         
        /* 
@@ -133,9 +133,9 @@ public class BSTTest {
         System.out.println("number of inorderPredecessor:" + tree.inorderPredecessor(key));
          */
          
-        //  System.out.print("Enter a number for inorderPredecessor:\t");
-        // key = input.nextInt();
-        // System.out.println("number of inorderPredecessor:" + tree.inOrder2(key));
+        System.out.print("Enter a number for inorderPredecessor:\t");
+        key = input.nextInt();
+        System.out.println("number of inorderPredecessor:" + tree.inOrder2(key));
         
          input.close(); // dcljr
          
