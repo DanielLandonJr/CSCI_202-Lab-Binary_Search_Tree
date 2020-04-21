@@ -36,7 +36,7 @@ public class BinarySearchTree<E extends Comparable<E>> extends AbstractTree<E> {
 
         //implement the code here as in search method.
 
-        // loop the list
+        // loop the tree
         while (current != e) {
 
             // if we hit null e is not in the tree so reset list and get out
@@ -88,10 +88,41 @@ public class BinarySearchTree<E extends Comparable<E>> extends AbstractTree<E> {
      */
     public int getNumberOfLeaves(){ 
         
-        // if we get here nothing was found
-        return 0; 
+        // variables
+        TreeNode<E> current = root; // Start from the root
+        
+        return  getNumberOfLeaves(current);
 
     } // end getNumberOfLeaves
+
+    /**
+     * 
+     * <p><strong><em>Description: </em></strong>helper method for same named method</p>
+     * 
+     * <p><strong><em>Method Name: </em></strong>getNumberOfLeaves</p>
+     *  
+     * <p><strong><em>Method Notes: </em></strong>helper method to recursivelly count tree leafs</p>
+     * 
+     * <p><strong><em>Pre-Conditions: </em></strong>none</p>
+     * 
+     * <p><strong><em>Post-Conditions: </em></strong>none</p>
+     * 
+     * <p><strong><em>Author: </em></strong>Daniel C. Landon Jr.</p>
+     * <p><strong><em>Start Date: </em></strong>04.21.2020</p>
+     *
+     * @param root root of tree to search
+     * @return recursive count of leaf numbers
+     */
+    public int getNumberOfLeaves(TreeNode<E> root) {
+
+        if(root == null) { return 0; } // base case
+        if(root.left == null && root.right == null) { return 1; } // leaf
+        else { 
+            return getNumberOfLeaves(root.left) 
+            + getNumberOfLeaves(root.right); 
+        } // end else
+
+    } // end helper getNumberOfLeaves
 
     /**
      * 

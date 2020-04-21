@@ -62,9 +62,22 @@ public class BSTTest {
 
         } // end else
 
-        System.out.println(">>>>>>>>>> PATH: END <<<<<<<<<<");
+        System.out.println(">>>>>>>>>> PATH: END <<<<<<<<<<\n");
 
         // >>>>>>>>>> path <<<<<<<<<<
+
+        // >>>>>>>>>> getNumberOfLeaves <<<<<<<<<<
+
+        // >>>>>>>>>> getNumberOfLeaves <<<<<<<<<<
+
+        lineSeperator(80, '*');
+
+        System.out.println("\n>>>>>>>>>> getNumberOfLeaves: START <<<<<<<<<<\n");
+
+        System.out.println("Number of Leaves found: " + tree.getNumberOfLeaves());
+
+        System.out.println("\n>>>>>>>>>> getNumberOfLeaves: END <<<<<<<<<<");
+
 
 
 
